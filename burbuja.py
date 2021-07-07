@@ -10,5 +10,19 @@ def swap(A, i, j):
     A[i] = A[j]
     A[j] = tmp
 
+
+
+
 def burbuja_optimizado(A):
-    raise NotImplementedError()
+	for i in range(len(A)):
+		cambios = True
+		for j in range(len(A)-1):
+			if A[j] > A[j+1]:
+				temp = A[j]
+				A[j] = A[j+1]
+				A[j+1] = temp
+				cambios = False
+		if cambios:
+			return A
+	return A
+			
